@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DesignRouteImport } from './routes/design'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as GetInvolvedRouteImport } from './routes/get-involved'
+import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as ProblemRouteImport } from './routes/problem'
+import { Route as ResearchRouteImport } from './routes/research'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as SolutionRouteImport } from './routes/solution'
+import { Route as TestingRouteImport } from './routes/testing'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DesignRoute = DesignRouteImport.update({
+  id: '/design',
+  path: '/design',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetInvolvedRoute = GetInvolvedRouteImport.update({
+  id: '/get-involved',
+  path: '/get-involved',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpactRoute = ImpactRouteImport.update({
+  id: '/impact',
+  path: '/impact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProblemRoute = ProblemRouteImport.update({
+  id: '/problem',
+  path: '/problem',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchRoute = ResearchRouteImport.update({
+  id: '/research',
+  path: '/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionRoute = SolutionRouteImport.update({
+  id: '/solution',
+  path: '/solution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestingRoute = TestingRouteImport.update({
+  id: '/testing',
+  path: '/testing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/design': typeof DesignRoute
+  '/gallery': typeof GalleryRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/impact': typeof ImpactRoute
+  '/problem': typeof ProblemRoute
+  '/research': typeof ResearchRoute
+  '/roadmap': typeof RoadmapRoute
+  '/solution': typeof SolutionRoute
+  '/testing': typeof TestingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/design': typeof DesignRoute
+  '/gallery': typeof GalleryRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/impact': typeof ImpactRoute
+  '/problem': typeof ProblemRoute
+  '/research': typeof ResearchRoute
+  '/roadmap': typeof RoadmapRoute
+  '/solution': typeof SolutionRoute
+  '/testing': typeof TestingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/design': typeof DesignRoute
+  '/gallery': typeof GalleryRoute
+  '/get-involved': typeof GetInvolvedRoute
+  '/impact': typeof ImpactRoute
+  '/problem': typeof ProblemRoute
+  '/research': typeof ResearchRoute
+  '/roadmap': typeof RoadmapRoute
+  '/solution': typeof SolutionRoute
+  '/testing': typeof TestingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/design'
+    | '/gallery'
+    | '/get-involved'
+    | '/impact'
+    | '/problem'
+    | '/research'
+    | '/roadmap'
+    | '/solution'
+    | '/testing'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/design'
+    | '/gallery'
+    | '/get-involved'
+    | '/impact'
+    | '/problem'
+    | '/research'
+    | '/roadmap'
+    | '/solution'
+    | '/testing'
+  id:
+    | '__root__'
+    | '/'
+    | '/design'
+    | '/gallery'
+    | '/get-involved'
+    | '/impact'
+    | '/problem'
+    | '/research'
+    | '/roadmap'
+    | '/solution'
+    | '/testing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DesignRoute: typeof DesignRoute
+  GalleryRoute: typeof GalleryRoute
+  GetInvolvedRoute: typeof GetInvolvedRoute
+  ImpactRoute: typeof ImpactRoute
+  ProblemRoute: typeof ProblemRoute
+  ResearchRoute: typeof ResearchRoute
+  RoadmapRoute: typeof RoadmapRoute
+  SolutionRoute: typeof SolutionRoute
+  TestingRoute: typeof TestingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/design': {
+      id: '/design'
+      path: '/design'
+      fullPath: '/design'
+      preLoaderRoute: typeof DesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-involved': {
+      id: '/get-involved'
+      path: '/get-involved'
+      fullPath: '/get-involved'
+      preLoaderRoute: typeof GetInvolvedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impact': {
+      id: '/impact'
+      path: '/impact'
+      fullPath: '/impact'
+      preLoaderRoute: typeof ImpactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/problem': {
+      id: '/problem'
+      path: '/problem'
+      fullPath: '/problem'
+      preLoaderRoute: typeof ProblemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research': {
+      id: '/research'
+      path: '/research'
+      fullPath: '/research'
+      preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solution': {
+      id: '/solution'
+      path: '/solution'
+      fullPath: '/solution'
+      preLoaderRoute: typeof SolutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testing': {
+      id: '/testing'
+      path: '/testing'
+      fullPath: '/testing'
+      preLoaderRoute: typeof TestingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DesignRoute: DesignRoute,
+  GalleryRoute: GalleryRoute,
+  GetInvolvedRoute: GetInvolvedRoute,
+  ImpactRoute: ImpactRoute,
+  ProblemRoute: ProblemRoute,
+  ResearchRoute: ResearchRoute,
+  RoadmapRoute: RoadmapRoute,
+  SolutionRoute: SolutionRoute,
+  TestingRoute: TestingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
