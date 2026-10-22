@@ -40,7 +40,7 @@ function Page() {
             </button>
           ))}
         </div>
-        <div className="mt-4 card-soft p-6"><p>{flow[a][1]}</p></div>
+        <div className="mt-4 card-soft p-6"><p>{flow[a]![1]}</p></div>
         <p className="mt-3 text-sm text-muted-foreground">This represents the documented workflow and does not independently validate medication safety.</p>
       </Section>
       <Section eyebrow="C & D. Results" title="Reported test outcomes">
