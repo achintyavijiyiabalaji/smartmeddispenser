@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Archive, Monitor, BellRing, CircleCheck, Wifi, Home } from "lucide-react";
-import img from "@/assets/prototype-illustrative.jpg";
-import { IllustrativeImg, Notice, PageHero, Section, meta } from "@/components/site";
+import { PrototypePhoto } from "@/components/report-images";
+import { Notice, PageHero, Section, meta } from "@/components/site";
 
 export const Route = createFileRoute("/solution")({
   head: () => meta("The SmartMed Solution", "Eight drawers, an OLED display, scheduled audio and LED reminders, a confirmation button and a Wi-Fi scheduling interface in one prototype."),
@@ -24,7 +24,7 @@ function Page() {
         SmartMed combines organised storage with reminders, visible information, drawer identification and user interaction.
       </PageHero>
       <Section>
-        <IllustrativeImg src={img} alt="Illustrative render of SmartMed with drawers, display and button" className="mx-auto max-w-4xl" />
+        <PrototypePhoto className="mx-auto max-w-4xl" />
       </Section>
       <Section tone="warm">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

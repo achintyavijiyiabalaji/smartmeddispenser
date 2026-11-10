@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Check, X } from "lucide-react";
-import img from "@/assets/prototype-illustrative.jpg";
-import { IllustrativeImg, Notice, PageHero, Section, meta } from "@/components/site";
+import { ReportImages } from "@/components/report-images";
+import { Notice, PageHero, Section, meta } from "@/components/site";
 
 export const Route = createFileRoute("/testing")({
   head: () => meta("Prototype & Testing", "How the SmartMed prototype works, reported test outcomes, what fell short of the specification, and future validation priorities."),
@@ -29,8 +29,10 @@ function Page() {
         Reported outcomes from the project's own evaluation — not independent certification.
       </PageHero>
       <Section eyebrow="A. The completed prototype">
-        <IllustrativeImg src={img} alt="Illustrative render of the SmartMed prototype front view" className="mx-auto max-w-3xl" />
-        <p className="mt-4 text-center text-sm text-muted-foreground">Front, side, rear, open-drawer, display, electronics and interface photographs will be added from the project report.</p>
+        <ReportImages group="Final prototype" />
+      </Section>
+      <Section eyebrow="Testing photographs" title="Original evidence from testing">
+        <ReportImages group="Testing" />
       </Section>
       <Section tone="pale" eyebrow="B. How it works" title="The documented system workflow">
         <div className="grid gap-2 md:grid-cols-6">
@@ -40,7 +42,7 @@ function Page() {
             </button>
           ))}
         </div>
-        <div className="mt-4 card-soft p-6"><p>{flow[a]![1]}</p></div>
+        <div className="mt-4 card-soft p-6"><p>{flow[a]?.[1]}</p></div>
         <p className="mt-3 text-sm text-muted-foreground">This represents the documented workflow and does not independently validate medication safety.</p>
       </Section>
       <Section eyebrow="C & D. Results" title="Reported test outcomes">

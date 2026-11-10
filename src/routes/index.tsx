@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, PenTool, Wrench, RefreshCw } from "lucide-react";
-import img from "@/assets/prototype-illustrative.jpg";
+import { PrototypePhoto } from "@/components/report-images";
 import { Card, Section, meta } from "@/components/site";
 
 export const Route = createFileRoute("/")({
@@ -29,10 +29,7 @@ function Index() {
             </div>
             <p className="mt-6 font-mono text-xs text-muted-foreground">A human-centred medication management prototype developed by Achintya V.</p>
           </div>
-          <figure>
-            <img src={img} alt="Illustrative render of a medicine organiser with eight drawers, a small display and a button" width={1280} height={960} className="w-full rounded-2xl shadow-xl" />
-            <figcaption className="mt-2 font-mono text-xs text-muted-foreground">Illustrative render — actual prototype photograph to be added from the project report.</figcaption>
-          </figure>
+          <PrototypePhoto />
         </div>
       </section>
 
