@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, meta } from "@/components/site";
 import { Box, Bullets, Conclusion, P, Part, Stat, Sub, SubNav, Table } from "@/components/report";
+import { ReportImages } from "@/components/report-images";
 
 export const Route = createFileRoute("/design")({
   head: () => meta("Design & Development", "SmartMed's existing-product analysis, design specification, weight and capacity research, material and battery selection, standards, safety analysis and final specifications."),
@@ -104,7 +105,11 @@ function Page() {
       <PageHero eyebrow="Design & development" title="From research to specification">
         Existing-product analysis, a design specification, supporting research on weight, capacity and packaging, material and battery selection, standards, safety and the final specification.
       </PageHero>
-      <SubNav items={[["products", "Existing products"], ["spec", "Design specification"], ["further", "Further research"], ["materials", "Materials"], ["battery", "Battery & charging"], ["standards", "Standards"], ["safety", "Safety"], ["led", "LED colour"], ["final", "Final specifications"]]} />
+      <SubNav items={[["ideations", "Ideations"], ["products", "Existing products"], ["spec", "Design specification"], ["further", "Further research"], ["materials", "Materials"], ["battery", "Battery & charging"], ["standards", "Standards"], ["safety", "Safety"], ["led", "LED colour"], ["final", "Final specifications"], ["working-drawings", "Working drawings"]]} />
+
+      <Part id="ideations" eyebrow="Concept development" title="Original ideation drawings">
+        {["Ideation 1", "Ideation 2", "Ideation 3", "Ideation 4"].map((group) => <Sub key={group} title={group}><ReportImages group={group} /></Sub>)}
+      </Part>
 
       <Part id="products" eyebrow="1. Existing products analysis" title="Six products with the same purpose" intro="Prices are as recorded during research and are not current market prices.">
         <div className="grid gap-5 lg:grid-cols-2">
@@ -316,6 +321,7 @@ function Page() {
         ]} />
         <P>The ₹4,000–₹8,000 figure is the original target specification, not a retail price.</P>
       </Part>
+      <Part id="working-drawings" eyebrow="CAD documentation" title="Final design and component drawings"><ReportImages group="CAD & working drawings" /></Part>
     </>
   );
 }
