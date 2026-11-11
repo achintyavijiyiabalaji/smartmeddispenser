@@ -45,7 +45,7 @@ function Table({ t }: { t: Tbl }) {
 
 export function FullReport() {
   const [ch, setCh] = useState(0);
-  const c = CHAPTERS[ch];
+  const c = CHAPTERS[ch] ?? CHAPTERS[0];
   const list = sections.slice(c.range[0], c.range[1]);
   return <div>
     <div className="flex flex-wrap gap-2" role="tablist">
