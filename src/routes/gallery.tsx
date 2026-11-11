@@ -3,7 +3,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import img from "@/assets/prototype-illustrative.jpg";
 import { ReportImages } from "@/components/report-images";
-import { Notice, PageHero, Section, meta } from "@/components/site";
+import { PageHero, Section, meta } from "@/components/site";
 
 export const Route = createFileRoute("/gallery")({
   head: () => meta("Gallery & Report", "Visual documentation of SmartMed's research, concepts, CAD models, electronics, construction and testing, plus the project report."),

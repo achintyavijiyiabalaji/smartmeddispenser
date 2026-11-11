@@ -15,6 +15,7 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GetInvolvedRouteImport } from './routes/get-involved'
 import { Route as ImpactRouteImport } from './routes/impact'
 import { Route as ProblemRouteImport } from './routes/problem'
+import { Route as ReportRouteImport } from './routes/report'
 import { Route as ResearchRouteImport } from './routes/research'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 import { Route as SolutionRouteImport } from './routes/solution'
@@ -50,6 +51,11 @@ const ProblemRoute = ProblemRouteImport.update({
   path: '/problem',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReportRoute = ReportRouteImport.update({
+  id: '/report',
+  path: '/report',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResearchRoute = ResearchRouteImport.update({
   id: '/research',
   path: '/research',
@@ -78,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/get-involved': typeof GetInvolvedRoute
   '/impact': typeof ImpactRoute
   '/problem': typeof ProblemRoute
+  '/report': typeof ReportRoute
   '/research': typeof ResearchRoute
   '/roadmap': typeof RoadmapRoute
   '/solution': typeof SolutionRoute
@@ -90,6 +97,7 @@ export interface FileRoutesByTo {
   '/get-involved': typeof GetInvolvedRoute
   '/impact': typeof ImpactRoute
   '/problem': typeof ProblemRoute
+  '/report': typeof ReportRoute
   '/research': typeof ResearchRoute
   '/roadmap': typeof RoadmapRoute
   '/solution': typeof SolutionRoute
@@ -103,6 +111,7 @@ export interface FileRoutesById {
   '/get-involved': typeof GetInvolvedRoute
   '/impact': typeof ImpactRoute
   '/problem': typeof ProblemRoute
+  '/report': typeof ReportRoute
   '/research': typeof ResearchRoute
   '/roadmap': typeof RoadmapRoute
   '/solution': typeof SolutionRoute
@@ -117,6 +126,7 @@ export interface FileRouteTypes {
     | '/get-involved'
     | '/impact'
     | '/problem'
+    | '/report'
     | '/research'
     | '/roadmap'
     | '/solution'
@@ -129,6 +139,7 @@ export interface FileRouteTypes {
     | '/get-involved'
     | '/impact'
     | '/problem'
+    | '/report'
     | '/research'
     | '/roadmap'
     | '/solution'
@@ -141,6 +152,7 @@ export interface FileRouteTypes {
     | '/get-involved'
     | '/impact'
     | '/problem'
+    | '/report'
     | '/research'
     | '/roadmap'
     | '/solution'
@@ -154,6 +166,7 @@ export interface RootRouteChildren {
   GetInvolvedRoute: typeof GetInvolvedRoute
   ImpactRoute: typeof ImpactRoute
   ProblemRoute: typeof ProblemRoute
+  ReportRoute: typeof ReportRoute
   ResearchRoute: typeof ResearchRoute
   RoadmapRoute: typeof RoadmapRoute
   SolutionRoute: typeof SolutionRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProblemRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/report': {
+      id: '/report'
+      path: '/report'
+      fullPath: '/report'
+      preLoaderRoute: typeof ReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/research': {
       id: '/research'
       path: '/research'
@@ -242,6 +262,7 @@ const rootRouteChildren: RootRouteChildren = {
   GetInvolvedRoute: GetInvolvedRoute,
   ImpactRoute: ImpactRoute,
   ProblemRoute: ProblemRoute,
+  ReportRoute: ReportRoute,
   ResearchRoute: ResearchRoute,
   RoadmapRoute: RoadmapRoute,
   SolutionRoute: SolutionRoute,
